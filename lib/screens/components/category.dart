@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:hyrule/controllers/api_controller.dart';
 import 'package:hyrule/screens/results.dart';
 import 'package:hyrule/utils/consts/categories.dart';
 
+import '../../domain/models/entry.dart';
+
 class Category extends StatelessWidget {
-  const Category({Key? key, required this.category}) : super(key: key);
+  Category({Key? key, required this.category}) : super(key: key);
   final String category;
+  List<Entry> entries = [];
+
+  final ApiController apiController = ApiController();
+
+  Future<List<Entry>> getEntries() async {
+    return await apiController.getEntriesByCategory(category: category);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +22,11 @@ class Category extends StatelessWidget {
       children: <Widget>[
         Flexible(
           child: InkWell(
-            onTap: () {
-              Navigator.push(
+            onTap: () async {
+              await getEntries().then((value) => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => Results(category: category)));
+                      builder: (context) => Results(entries: value, category: category))));
             },
             borderRadius: BorderRadius.circular(16.0),
             child: Ink(
