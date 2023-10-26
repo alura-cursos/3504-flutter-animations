@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hyrule/controllers/api_controller.dart';
 import 'package:hyrule/domain/models/entry.dart';
 import 'package:hyrule/screens/components/entry_card.dart';
+import 'package:hyrule/screens/details.dart';
 import 'package:hyrule/screens/favorites.dart';
 import 'package:hyrule/utils/consts/categories.dart';
 
@@ -87,11 +88,17 @@ class _ListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-      leading: Image.network(entry.image),
-      title: Text(entry.name.toUpperCase(), style: TextStyle(fontSize: 21.0, fontFamily: 'Philosopher'),),
-      onTap: () {},
+    return OpenContainer(
+      closedColor: Colors.transparent,
+      openColor: Colors.transparent,
+      transitionType: ContainerTransitionType.fadeThrough,
+      closedBuilder: (context, action) => ListTile(
+        contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+        leading: Image.network(entry.image),
+        title: Text(entry.name.toUpperCase(), style: TextStyle(fontSize: 21.0, fontFamily: 'Philosopher'),),
+        onTap: action,
+      ),
+      openBuilder: (context, action) => Details(entry: entry),
     );
   }
 }
