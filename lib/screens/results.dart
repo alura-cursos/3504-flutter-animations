@@ -77,7 +77,7 @@ class _ListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: (context, index) => _ListTile(entry: entries[index]));
+    return ListView.builder(itemBuilder: (context, index) => _ListTile(entry: entries[index]), itemCount: entries.length,);
   }
 }
 
