@@ -8,7 +8,6 @@ import '../../domain/models/entry.dart';
 class Category extends StatelessWidget {
   Category({Key? key, required this.category}) : super(key: key);
   final String category;
-  List<Entry> entries = [];
 
   final ApiController apiController = ApiController();
 
