@@ -94,7 +94,10 @@ class _ListTile extends StatelessWidget {
       transitionType: ContainerTransitionType.fadeThrough,
       closedBuilder: (context, action) => ListTile(
         contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-        leading: Image.network(entry.image),
+        leading: Container(
+            clipBehavior: Clip.hardEdge,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.0)),
+            child: Image.network(entry.image)),
         title: Text(entry.name.toUpperCase(), style: TextStyle(fontSize: 21.0, fontFamily: 'Philosopher'),),
         onTap: action,
       ),
