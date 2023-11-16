@@ -43,17 +43,9 @@ class _ResultsState extends State<Results> {
                 icon: const Icon(Icons.swap_horiz))
           ],
         ),
-        body: PageTransitionSwitcher(
-          transitionBuilder: (child, primaryAnimation, secondaryAnimation) =>
-              FadeThroughTransition(
-            animation: primaryAnimation,
-            secondaryAnimation: secondaryAnimation,
-            child: child,
-          ),
-          child: cardView
-              ? _CardList(entries: widget.entries)
-              : _ListView(entries: widget.entries),
-        ),
+        body: cardView
+            ? _CardList(entries: widget.entries)
+            : _ListView(entries: widget.entries),
       ),
     );
   }
@@ -88,20 +80,18 @@ class _ListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OpenContainer(
-      closedColor: Colors.transparent,
-      openColor: Colors.transparent,
-      transitionType: ContainerTransitionType.fadeThrough,
-      closedBuilder: (context, action) => ListTile(
-        contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-        leading: Container(
-            clipBehavior: Clip.hardEdge,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.0)),
-            child: Image.network(entry.image)),
-        title: Text(entry.name.toUpperCase(), style: TextStyle(fontSize: 21.0, fontFamily: 'Philosopher'),),
-        onTap: action,
+    return ListTile(
+      contentPadding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      leading: Container(
+          clipBehavior: Clip.hardEdge,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.0)),
+          child: Image.network(entry.image)),
+      title: Text(
+        entry.name.toUpperCase(),
+        style: const TextStyle(fontSize: 21.0, fontFamily: 'Philosopher'),
       ),
-      openBuilder: (context, action) => Details(entry: entry),
+      onTap: () => Navigator.push(context,
+          MaterialPageRoute(builder: (context) => Details(entry: entry))),
     );
   }
 }

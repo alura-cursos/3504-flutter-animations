@@ -52,20 +52,17 @@ class EntryCard extends StatelessWidget {
                     Flexible(
                       flex: 1,
                       fit: FlexFit.tight,
-                      child: Hero(
-                        tag: '${entry.name}-hero',
-                        child: Container(
-                          margin: const EdgeInsets.symmetric(
-                            vertical: 16.0,
-                            horizontal: 8.0,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.0),
-                              image: DecorationImage(
-                                image: NetworkImage(entry.image),
-                                fit: BoxFit.cover,
-                              )
-                          ),
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(
+                          vertical: 16.0,
+                          horizontal: 8.0,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                            image: DecorationImage(
+                              image: NetworkImage(entry.image),
+                              fit: BoxFit.cover,
+                            )
                         ),
                       ),
                     ),
