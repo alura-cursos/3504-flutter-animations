@@ -1,23 +1,25 @@
-![Mobile-Flutter: praticando arquitetura clean code](capa.png)
+![Mobile-Flutter: Conhecendo a biblioteca Animations](capa.png)
 
-# Flutter: Praticando arquitetura Clean Code
+# Flutter: Conhecendo a biblioteca Animations
 
-Projeto Hyrule para o curso Flutter: Praticando arquitetura Clean Code, focado em compreender e implementar uma arquitetura limpa em seu projeto.
+Projeto Hyrule para o curso Flutter: Conhecendo a biblioteca Animations, focado em compreender e implementar uma biblioteca de animações em seu projeto.
 
 ### Tópicos abordados no curso:
 
-- Sobre arquitetura limpa;
-- Adaptar a estrutura da arquitetura limpa para um projeto Flutter;
-- As camadas que definem uma arquitetura limpa;
-- Responsabilidades das camadas.
-- Bibliotecas e acoplamentos;
+- O que são animações;
+- Importância das animações;
+- Como implementar as seguinte animações:
+    - OpenContainer;
+    - SharedAxis;
+    - PageTransitionSwitcher;
+    - Hero widget;
+- Conhecimentos de Material Design.
 
-
-Este curso é indicado para pessoas que já tem conhecimento intermediário e querem aprofundar seu conhecimento em Flutter, seguindo boas práticas e também entendendendo como funciona arquitetura de software dentro dos padrões mobile.
+Este curso é indicado para pessoas que já tem conhecimento básico e querem aprofundar seu conhecimento em Flutter, seguindo boas práticas e também entendendendo como implementar a biblioteca Animations dentro de seu projeto.
 
 ## 📑 Requisitos
 
-- Conhecimentos intermediários de Flutter e Dart;
+- Conhecimentos básicos de Flutter e Dart;
 - VS Code com plugins do Flutter e Dart instalados (recomendado para acompanhar este curso);
 - É importante ter o Flutter na versão 3.10.2.
 
@@ -28,7 +30,7 @@ Este curso é indicado para pessoas que já tem conhecimento intermediário e qu
 - Mostrar entradas;
 - Deletar uma entrada;
 
-![GIF da aplicação em execução](https://github.com/ikyrie/3117-clean_architecture/assets/22684176/d993560d-45a6-4a0c-827c-c467535a659a)
+![GIF da aplicação em execução](projeto.gif)
 
 
 ## 🛠️ Abrir e rodar o projeto
